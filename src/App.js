@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { ColorPicker, useColor } from "react-color-palette"; 
+import "react-color-palette/lib/css/styles.css"; 
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export default function ColorPicker1(){ 
+const [color, setColor] = useColor("hex", "#121212"); 
 
-export default App;
+return ( 
+	<div> 
+		<h1>Color Picker</h1> 
+		<ColorPicker width={456} height={228} 
+				color={color} 
+				onChange={setColor} hideHSV dark />; 
+	</div> 
+) 
+};
